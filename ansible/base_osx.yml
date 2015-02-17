@@ -1,0 +1,7 @@
+---
+- hosts: base_osx
+  roles:
+    - base_osx
+    - geerlingguy.homebrew
+  vars_files:
+    - vars/main.yml

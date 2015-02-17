@@ -1,0 +1,16 @@
+---
+- name: Install base development packages
+  homebrew: 
+    name: "{{item}}"
+    update_homebrew: yes
+    upgrade_all: yes
+    state: latest
+  with_items:
+    - tmux  
+    - reattach-to-user-namespace
+
+- name: Copy .tmux configuration file
+  copy: >
+    src=tmux.conf
+    dest=~/.tmux.conf
+    mode=644

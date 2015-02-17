@@ -1,0 +1,13 @@
+---
+- include: java-osx.yml
+
+- name: Install Java-related Homebrew packages
+  homebrew:
+    name: "{{item}}"
+    update_homebrew: yes
+    upgrade_all: yes
+    state: latest
+  with_items:
+    - ant
+    - maven
+    

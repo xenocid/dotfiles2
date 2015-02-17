@@ -1,0 +1,13 @@
+---
+- name: Install Vim
+  homebrew:
+    name: macvim
+    state: latest
+    update_homebrew: yes
+    upgrade_all: yes
+
+- name: Copy vimrc
+  copy: > 
+    src=vimrc
+    dest=~/.vimrc
+    mode=644

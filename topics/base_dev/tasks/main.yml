@@ -1,0 +1,27 @@
+---
+- name: Install base development packages
+  homebrew: 
+    name: "{{item}}"
+    update_homebrew: yes
+    upgrade_all: yes
+    state: latest
+  with_items:
+    - imagemagick  
+    - wget
+    - selecta
+    - ctags
+    - pv
+    - ack
+    - tree
+    - jq
+    - the_silver_searcher
+    - cmake
+
+- name: Install base development applications
+  homebrew_cask:
+    name: "{{item}}"
+    state: present
+  with_items:
+    - virtualbox
+    - iterm2
+    - vagrant

@@ -1,0 +1,3 @@
+---
+- name: Install Flowdock
+  homebrew_cask: name=flowdock state=present

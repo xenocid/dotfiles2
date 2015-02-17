@@ -1,0 +1,22 @@
+---
+- name: Install base OS X packages
+  homebrew:
+    name: "{{item}}"
+    update_homebrew: yes
+    upgrade_all: yes
+    state: latest
+  with_items:
+    - qt
+
+- name: Install base OS X apps
+  homebrew_cask:
+    name: "{{item}}"
+    state: present
+  with_items:
+    - bettertouchtool
+    - skype
+    - transmit
+    - evernote
+    - flux
+    - textexpander
+

@@ -1,0 +1,9 @@
+[base_osx]
+localhost
+
+[dotfiles]
+localhost
+
+[osx:children]
+base_osx
+dotfiles
