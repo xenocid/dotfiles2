@@ -1,1 +1,12 @@
 ---
+
+- include: rbenv-setup.yml tags=ruby,ruby:install,rbenv
+- include: ruby-install.yml tags=ruby,ruby:install,rbenv
+
+- name: Copy gemrc
+  copy: >
+    src=gemrc
+    dest=~/.gemrc
+    mode=0400
+
+

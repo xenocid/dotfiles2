@@ -19,4 +19,24 @@
     - evernote
     - flux
     - textexpander
+    - google-chrome
+    - dropbox
+    - skitch
+    - alfred
+    - launchrocket
+    - controlplane
+    - calibre
+    - omnifocus
+    - crashplan
+    - keyboard-maestro
+    - mactex
+    - utorrent
+    - hazel
+    - qlcolorcode
+    - qlmarkdown
+    - quicklook-json
+    - omnipresence
+    - path-finder
 
+- name: Remap Caps Lock to Control
+  command: osascript roles/base_osx/files/remap_capslock_to_ctrl.scpt

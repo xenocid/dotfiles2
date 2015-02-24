@@ -1,0 +1,6 @@
+bundler
+pry
+pry-remote
+rspec
+cucumber
+thor

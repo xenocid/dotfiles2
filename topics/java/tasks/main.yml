@@ -10,4 +10,10 @@
   with_items:
     - ant
     - maven
-    
+
+- name: Install Java-related apps
+  homebrew_cask:
+    name: "{{item}}"
+    state: present
+  with_items:
+    - intellij-idea-ce

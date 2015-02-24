@@ -1,0 +1,14 @@
+# Always color, even if piping to a another program
+--color
+
+--ignore-dir=.idea/
+--ignore-dir=node_modules/
+--ignore-dir=vendor/
+--ignore-dir=log/
+
+--type-add=css=scss
+--type-add=ruby=.haml,.feature,.ru,.lock
+
+--type-set=coffeescript=.coffee
+--type-set=coffee=.coffee
+--type-set=json=.json

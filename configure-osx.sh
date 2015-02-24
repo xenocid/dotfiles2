@@ -15,3 +15,5 @@ cp -R ansible/* $ANSIBLE_CONFIGURATION_DIRECTORY
 cp -R topics/* $ANSIBLE_CONFIGURATION_DIRECTORY/roles/
 
 ansible-playbook --ask-sudo-pass -i $ANSIBLE_CONFIGURATION_DIRECTORY/inventories/osx $ANSIBLE_CONFIGURATION_DIRECTORY/osx.yml --connection=local
+
+brew linkapps

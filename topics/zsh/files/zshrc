@@ -1,0 +1,42 @@
+# Path to my zsh configuration.
+DOTFILES=$HOME/.zsh
+ZSH=$DOTFILES/zsh
+
+# History file parameters (path to the history file, size of the history etc)
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+
+# Bind keys to vi-mode instead of default emacs-mode
+bindkey -v
+
+# Add /usr/local/bin to the path, so we can enable Homebrew & all its packages
+export PATH=/usr/local/bin:$PATH
+
+# all of our zsh files
+typeset -U config_files
+config_files=($DOTFILES/**/*.zsh)
+
+# load the path files
+for file in ${${(M)config_files:#*/path.zsh}:#*/zsh/plugins/*/*.zsh}
+do
+  source $file
+done
+
+# load everything but the path and completion files
+for file in ${${${config_files:#*/path.zsh}:#*/completion.zsh}:#*/zsh/plugins/*/*.zsh}
+do
+  source $file
+done
+
+# initialize autocomplete here, otherwise functions won't be loaded
+autoload -U compinit
+compinit
+
+# load every completion after autocomplete loads
+for file in ${(M)config_files:#*/completion.zsh}
+do
+  source $file
+done
+
+unset config_files

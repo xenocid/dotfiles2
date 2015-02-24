@@ -1,1 +1,9 @@
 ---
+- name: Creates .zsh folder to contain all configuration scripts
+  file: path=~/.zsh state=directory
+
+- name: Copy zshrc
+  copy: >
+    src=zshrc
+    dest=~/.zshrc
+    mode=0400

@@ -1,0 +1,13 @@
+---
+
+- name: Install ruby(ies)
+  command: zsh -lic "rbenv install -s {{ item.ruby_version }} && rbenv rehash"
+  sudo: true
+  sudo_user: "{{ ruby_deploy_user }}"
+  with_items: rubies
+  ignore_errors: yes
+
+- name: Make one of the ruby versions default
+  command: zsh -lic "rbenv global {{ global_ruby_version }}"
+  
+

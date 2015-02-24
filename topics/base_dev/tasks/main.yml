@@ -16,6 +16,12 @@
     - jq
     - the_silver_searcher
     - cmake
+    - autoconf
+    - boot2docker
+    - docker
+    - gettext
+    - libevent
+    - bfg
 
 - name: Install base development applications
   homebrew_cask:
@@ -25,3 +31,12 @@
     - virtualbox
     - iterm2
     - vagrant
+    - dash
+
+- name: Copy ack configuration file
+  copy: >
+    src=ackrc
+    dest=~/.ackrc
+    mode=644
+
+- include: copy_ssh.yml
