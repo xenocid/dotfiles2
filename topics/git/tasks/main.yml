@@ -1,0 +1,25 @@
+---
+
+- name: Create zsh/git folder
+  file: path=~/.zsh/git state=directory
+
+- name: Copy git-related zsh configs
+  copy: >
+    src={{ item }}
+    dest=~/.zsh/git/{{ item }}
+  with_items:
+    - aliases.zsh
+    - completion.zsh
+    - git.zsh
+
+- name: Copy global .gitignore
+  copy: >
+    src=gitignore
+    dest=~/.gitignore
+    mode=0400
+
+- name: Copy global .gitconfig
+  copy: >
+    src=gitconfig
+    dest=~/.gitconfig
+    mode=0400

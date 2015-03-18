@@ -1,0 +1,19 @@
+---
+
+- name: Create .go folder
+  file: path=~/.go state=directory
+  file: path=~/.zsh/go state=directory
+
+- name: Copy Go path initializer
+  copy: >
+    src=path.zsh
+    dest=~/.zsh/go/path.zsh
+
+- name: Install Go
+  homebrew:
+    name: "{{item}}"
+    update_homebrew: yes
+    upgrade_all: yes
+    state: latest
+  with_items:
+    - go

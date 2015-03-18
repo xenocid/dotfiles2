@@ -1,0 +1,17 @@
+---
+
+- name: Install Python
+  homebrew:
+    name: "{{ item }}"
+    update_homebrew: yes
+    upgrade_all: yes
+    state: latest
+  with_items:
+    - python
+    - python3
+
+- name: Install global Python packages
+  pip:
+    name: "{{ item }}"
+  with_items:
+    - virtualenv

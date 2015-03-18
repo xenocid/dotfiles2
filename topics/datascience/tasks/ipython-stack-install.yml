@@ -1,0 +1,28 @@
+---
+
+- name: Install IPython pre-requisites
+  homebrew: 
+    name: "{{item}}"
+    update_homebrew: yes
+    upgrade_all: yes
+    state: latest
+  with_items:
+    - pyqt
+    - zeromq
+    - freetype
+    - autoenv
+
+- name: Install IPython and data stack
+  pip:
+    name: "{{ item }}"
+  with_items:
+    - pygments
+    - pyzmq
+    - test
+    - ipython
+    - numpy
+    - scipy
+    - matplotlib
+    - scikit-learn
+    - pandas
+

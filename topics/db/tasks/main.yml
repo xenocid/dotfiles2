@@ -1,0 +1,27 @@
+---
+
+- name: Install databases
+  homebrew:
+    name: "{{ item }}"
+    update_homebrew: yes
+    upgrade_all: yes
+    state: latest
+  with_items:
+    - postgresql
+    - redis
+    - mongodb
+
+- name: Copy psqlrc file to the root
+  copy: >
+    src=psqlrc
+    dest=~/.psqlrc
+
+- name: Create db zsh initializer folder
+  file: path=~/.zsh/db state=directory
+
+- name: Copy shell configs for databases
+  copy:
+    src={{item}}
+    dest=~/.zsh/db/{{ item }}
+  with_items:
+    - aliases.zsh

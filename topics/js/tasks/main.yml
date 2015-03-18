@@ -1,0 +1,22 @@
+---
+
+- name: Install JavaScript development packages
+  homebrew: 
+    name: "{{item}}"
+    update_homebrew: yes
+    upgrade_all: yes
+    state: latest
+  with_items:
+    - node  
+
+- name: Install global Javascript packages
+  npm:
+    name: "{{ item }}"
+    state: latest
+    global: yes
+  with_items:
+    - coffee-script
+    - gulp
+    - grunt
+    - jshint
+

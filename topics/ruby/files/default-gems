@@ -4,3 +4,4 @@ pry-remote
 rspec
 cucumber
 thor
+tmuxinator

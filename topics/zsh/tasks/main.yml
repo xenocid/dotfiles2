@@ -1,9 +1,29 @@
 ---
 - name: Creates .zsh folder to contain all configuration scripts
   file: path=~/.zsh state=directory
+  file: path=~/.zsh/zsh state=directory
+  file: path=~/.zsh/bin state=directory
 
 - name: Copy zshrc
   copy: >
     src=zshrc
     dest=~/.zshrc
     mode=0400
+
+- name: Copy other zsh configs
+  copy: >
+    src={{ item }}
+    dest=~/.zsh/zsh/{{ item }}
+  with_items:
+   - aliases.zsh
+   - config.zsh
+   - path.zsh
+   - prompt.zsh
+   - xenocid.zsh-theme
+
+- name: Copy scripts into the bin subfolder
+  copy: >
+    src={{ item }}
+    dest=~/.zsh/bin/{{ item }}
+  with_items:
+    - plant

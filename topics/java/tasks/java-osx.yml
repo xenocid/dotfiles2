@@ -21,3 +21,11 @@
 
 - name: Unmount JDK image
   command: hdiutil detach /Volumes/JDK\ 8\ Update\ 31
+
+- name: Create Java-specific zsh config subfolder
+  file: path=~/.zsh/java state=directory 
+
+- name: Copy Java-specific config file
+  copy: >
+    src=java.zsh
+    dest=~/.zsh/java/java.zsh

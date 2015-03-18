@@ -6,6 +6,7 @@
     upgrade_all: yes
     state: latest
   with_items:
+    - coreutils
     - imagemagick  
     - wget
     - selecta
@@ -22,6 +23,9 @@
     - gettext
     - libevent
     - bfg
+    - awscli
+    - heroku-toolbelt
+    - plantuml
 
 - name: Install base development applications
   homebrew_cask:
@@ -32,6 +36,7 @@
     - iterm2
     - vagrant
     - dash
+    - lighttable
 
 - name: Copy ack configuration file
   copy: >

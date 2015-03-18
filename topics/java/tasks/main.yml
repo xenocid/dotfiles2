@@ -10,6 +10,7 @@
   with_items:
     - ant
     - maven
+    - scala
 
 - name: Install Java-related apps
   homebrew_cask:

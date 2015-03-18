@@ -1,7 +1,7 @@
 set -e
 
-. lib-ui.sh
-. lib-misc.sh
+source lib-ui.sh
+source lib-misc.sh
 
 CONFIG_DIRECTORY="$HOME/Config"
 ANSIBLE_CONFIGURATION_DIRECTORY="$HOME/.ansible.d"
