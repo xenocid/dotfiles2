@@ -45,3 +45,6 @@
     mode=644
 
 - include: copy_ssh.yml
+
+- include: exercism.yml
+

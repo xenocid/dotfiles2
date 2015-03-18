@@ -1,0 +1,15 @@
+---
+
+- name: Tap binary repo to install exercism
+  homebrew_tap: tap=homebrew/binary state=present
+
+- name: Install exercism
+  homebrew: name=exercism
+
+- name: Check if exercism configuration file exists
+  stat: path=~/.exercism.json
+  register: exercism_exists
+
+- name: Configure exercism
+  command: "exercism configure --key=`cat ~/Dropbox/Config/dotfiles-pvt/exercism.key`" 
+  when: exercism_exists.stat.exists == False
