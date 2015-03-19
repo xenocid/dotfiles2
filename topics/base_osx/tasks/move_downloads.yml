@@ -1,0 +1,31 @@
+---
+
+- name: Include vars
+  include_vars: move_downloads.yml 
+
+- name: Check if ~/Downloads is symlinked to ~/Dropbox/Inbox
+  stat: path={{ downloads_dir_path }}
+  register: downloads_dir
+
+- debug: var={{ downloads_dir_path }}
+- debug: var=downloads_dir
+
+- name: Copy files from Downloads to Dropbox/Inbox
+  copy: >
+    src={{ downloads_dir_path }}
+    dest={{ dropbox_inbox_path }}
+  when: downloads_dir.stat.isdir is defined and downloads_dir.stat.isdir
+
+- name: Remove ~/Downloads folder
+  #file: path={{ downloads_dir_path }} state=absent
+  command: "rm -rf {{ downloads_dir_path }}"
+  sudo: true
+  when: downloads_dir.stat.isdir is defined and downloads_dir.stat.isdir
+
+- name: Symlink ~/Downloads to ~/Dropbox/Inbox
+  file: path={{ downloads_dir_path }}
+        src={{ dropbox_inbox_path }}
+        state=link
+        force=yes
+  sudo: true
+  #when: downloads_dir.stat.islnk is defined and not downloads_dir.stat.islnk

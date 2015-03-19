@@ -41,3 +41,8 @@
 
 - name: Remap Caps Lock to Control
   command: osascript roles/base_osx/files/remap_capslock_to_ctrl.scpt
+
+#- include: move_downloads.yml
+  #tags:
+    #- debug
+
