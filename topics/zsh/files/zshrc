@@ -3,9 +3,9 @@ DOTFILES=$HOME/.zsh
 ZSH=$DOTFILES/zsh
 
 # History file parameters (path to the history file, size of the history etc)
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+export HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=10000
 
 # Bind keys to vi-mode instead of default emacs-mode
 bindkey -v

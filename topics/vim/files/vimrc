@@ -236,6 +236,8 @@ NeoBundle 'kchmck/vim-coffee-script',{'autoload' : {
 NeoBundleLazy 'klen/python-mode', {'autoload': {'filetypes': ['python']}}
 " ???
 NeoBundleLazy 'alfredodeza/coveragepy.vim', {'autoload': {'filetypes': ['python']}}
+" 
+NeoBundleLazy 'ivanov/vim-ipython', {'autoload': {'filetype': ['python']}}
 
 " }}}
 
@@ -392,9 +394,9 @@ autocmd! bufwritepost vimrc.symlink source ~/.vimrc
 " Leader key
 " -----------------------------------------------------------------------------
 " {{{
-let mapleader=","
-let g:mapleader =","
-let maplocalleader= ' '
+let mapleader=" "
+let g:mapleader =" "
+let maplocalleader= ','
 " }}}
 
 filetype plugin indent on
@@ -547,6 +549,9 @@ set shiftwidth=2               " number of spaces for auto-indent
 set softtabstop=2              " a soft-tab of four spaces
 set autoindent                 " set on the auto-indent
 
+" let terminal resize scale the internal windows
+autocmd VimResized * :wincmd =
+
 function! ToggleWrap()
   let s:nowrap_cc_bg = [22, '#005f00']
   redir => s:curr_cc_hi
@@ -579,6 +584,12 @@ set whichwrap+=h,l,<,>,[,]
 " This doesn't insert hard line breaks.
 set linebreak
 set showbreak=↪\ \              " Character to use to indicate wrapped string
+
+noremap <up>    <C-W>+
+noremap <down>  <C-W>-
+noremap <left>  3<C-W><
+noremap <right> 3<C-W>>
+
 " }}}
 
 " -----------------------------------------------------------------------------

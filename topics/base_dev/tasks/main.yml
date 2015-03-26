@@ -26,6 +26,7 @@
     - awscli
     - heroku-toolbelt
     - plantuml
+    - hh
 
 - name: Install base development applications
   homebrew_cask:

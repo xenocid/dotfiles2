@@ -16,6 +16,7 @@
     dest=~/.zsh/zsh/{{ item }}
   with_items:
    - aliases.zsh
+   - hh.zsh
    - config.zsh
    - path.zsh
    - prompt.zsh
