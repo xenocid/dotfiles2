@@ -85,6 +85,8 @@ NeoBundleLazy 'Shougo/neomru.vim', {'autoload':{'unite_sources':'mru'}}
 
 " Lean & mean status/tabline for vim
 NeoBundle 'bling/vim-airline'
+" Automatically save Vim sessions
+NeoBundle 'tpope/vim-obsession'
 " Syntax-checking plugin for multiple programming languages
 NeoBundle 'scrooloose/syntastic'
 " Supertab combines multiple plugins on one tab button (like UltiSnips and YCM)
