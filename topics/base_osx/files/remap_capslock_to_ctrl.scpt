@@ -7,6 +7,7 @@ tell application "System Events"
   tell application process "System Preferences"
     get properties
 
+    delay 2
     click button "Modifier Keys…" of tab group 1 of window "Keyboard"
     tell sheet 1 of window "Keyboard"
       click pop up button 4

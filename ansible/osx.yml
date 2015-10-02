@@ -7,14 +7,15 @@
     - base_dev
     - zsh
     - tmux
-    - db
     - git
-    - vim
-    - js
-    - java
-    - ruby
     - python
+    - vim
+    - java
+    - js
+    - rn
     - golang
+    - db
     - haskell
     - datascience
-    - rn
+  
+

@@ -18,8 +18,6 @@
     - the_silver_searcher
     - cmake
     - autoconf
-    - boot2docker
-    - docker
     - gettext
     - libevent
     - bfg
@@ -27,6 +25,8 @@
     - heroku-toolbelt
     - plantuml
     - hh
+    - docker
+    - docker-machine
 
 - name: Install base development applications
   homebrew_cask:

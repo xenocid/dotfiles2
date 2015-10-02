@@ -1,1 +1,11 @@
 ---
+
+- name: Install Haskell
+  homebrew: 
+    name: "{{item}}"
+    update_homebrew: yes
+    upgrade_all: yes
+    state: latest
+  with_items:
+    - ghc
+    - cabal-install
