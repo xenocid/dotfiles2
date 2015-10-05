@@ -19,9 +19,10 @@
     - pygments
     - pyzmq
     - test
-    - ipython
     - numpy
     - scipy
     - matplotlib
     - scikit-learn
     - pandas
+    - jupyter
+
