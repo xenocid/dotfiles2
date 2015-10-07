@@ -1,7 +1,8 @@
 ---
-- name: Creates .zsh folder to contain all configuration scripts
-  file: path=~/.zsh state=directory
+- name: Creates .zsh/zsh folder to contain all configuration scripts
   file: path=~/.zsh/zsh state=directory
+
+- name: Creates .zsh/bin folder to contain all executable scripts
   file: path=~/.zsh/bin state=directory
 
 - name: Copy zshrc

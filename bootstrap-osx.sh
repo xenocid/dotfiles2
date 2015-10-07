@@ -56,4 +56,8 @@ if ! (brew list -1 | grep -q "^brew-cask$"); then
 	brew install caskroom/cask/brew-cask
 fi
 
+if [[ ! -x ~/.ansible.tmp/downloads ]]; then
+  mkdir -p ~/.ansible.tmp/downloads
+fi
+
 success "Bootstrapping is complete\n"
