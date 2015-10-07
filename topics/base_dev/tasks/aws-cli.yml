@@ -1,0 +1,13 @@
+---
+
+- name: Create .aws folder 
+  file: path="~/.aws" state=directory mode=0755
+
+- name: Copy AWS credentials file from Config
+  copy: >
+    src="~/Dropbox/Config/aws/{{item}}"
+    dest="~/.aws/{{item}}"
+    mode=0444
+  with_items:
+    - credentials
+

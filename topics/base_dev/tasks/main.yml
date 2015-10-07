@@ -46,6 +46,7 @@
     mode=644
 
 - include: copy_ssh.yml
+- include: aws-cli.yml
 
 - include: exercism.yml
 
