@@ -332,6 +332,26 @@ NeoBundleLazy 'wting/rust.vim', {'autoload': { 'filetypes': ['rust']}}
 " }}}
 
 " -------------------------------------------------------
+" Golang
+" -------------------------------------------------------
+" {{{
+
+" Go syntax highlight and programming support 
+NeoBundleLazy 'fatih/vim-go', {'autoload': { 'filetypes': ['go']}}
+
+" }}}
+
+" -------------------------------------------------------
+" YAML, Ansible
+" -------------------------------------------------------
+" {{{
+
+" Go syntax highlight and programming support 
+NeoBundle''pearofducks/ansible-vim'
+
+" }}}
+
+" -------------------------------------------------------
 " Colorschemes
 " -------------------------------------------------------
 " {{{

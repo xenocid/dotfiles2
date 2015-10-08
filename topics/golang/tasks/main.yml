@@ -2,6 +2,8 @@
 
 - name: Create .go folder
   file: path=~/.go state=directory
+
+- name: Create go-specific folder in zsh location
   file: path=~/.zsh/go state=directory
 
 - name: Copy Go path initializer
