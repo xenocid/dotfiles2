@@ -8,6 +8,7 @@
   with_items:
     - qt
     - ffmpeg
+    - youtube-dl
 
 - name: Install base OS X apps
   homebrew_cask:
