@@ -38,6 +38,7 @@
     - vagrant
     - dash
     - lighttable
+    - coderunner
 
 - name: Copy ack configuration file
   copy: >
