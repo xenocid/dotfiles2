@@ -347,7 +347,7 @@ NeoBundleLazy 'fatih/vim-go', {'autoload': { 'filetypes': ['go']}}
 " {{{
 
 " Go syntax highlight and programming support 
-NeoBundle''pearofducks/ansible-vim'
+NeoBundle 'pearofducks/ansible-vim'
 
 " }}}
 
