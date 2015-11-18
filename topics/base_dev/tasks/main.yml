@@ -1,4 +1,7 @@
 ---
+- name: Create .bin folder
+  file: path="~/.bin" state="directory"
+
 - name: Install base development packages
   homebrew: 
     name: "{{item}}"
@@ -51,3 +54,6 @@
 
 - include: exercism.yml
 
+- name: Install challenges-cli
+  pip:
+    name: challenge-cli
