@@ -24,7 +24,6 @@
     - gettext
     - libevent
     - bfg
-    - awscli
     - heroku-toolbelt
     - plantuml
     - hh

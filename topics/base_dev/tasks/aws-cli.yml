@@ -1,4 +1,12 @@
 ---
+- name: Install AWS CLI
+  homebrew:
+    name: "{{item}}"
+    update_homebrew: yes
+    upgrade_all: yes
+    state: latest
+  with_items:
+    - awscli
 
 - name: Create .aws folder 
   file: path="~/.aws" state=directory mode=0755
