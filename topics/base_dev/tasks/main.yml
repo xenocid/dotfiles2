@@ -29,6 +29,7 @@
     - hh
     - docker
     - docker-machine
+    - mobile-shell
 
 - name: Install base development applications
   homebrew_cask:
