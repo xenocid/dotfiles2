@@ -31,5 +31,6 @@
     name: "{{item}}"
     state: present
   with_items:
+    - anaconda
     - pineapple-pro
 
