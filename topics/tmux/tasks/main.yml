@@ -14,3 +14,10 @@
     src=tmux.conf
     dest=~/.tmux.conf
     mode=644
+
+- name: Copy code.sh script
+  copy: >
+    src=code.sh
+    dest=~/.bin/code
+    mode=755
+

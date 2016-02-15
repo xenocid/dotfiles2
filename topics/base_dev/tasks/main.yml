@@ -1,4 +1,7 @@
 ---
+- name: Create .bin folder
+  file: path="~/.bin" state="directory"
+
 - name: Install base development packages
   homebrew: 
     name: "{{item}}"
@@ -21,13 +24,13 @@
     - gettext
     - libevent
     - bfg
-    - awscli
     - heroku-toolbelt
     - plantuml
     - hh
     - docker
     - docker-machine
     - htop-osx
+    - mobile-shell
 
 - name: Install base development applications
   homebrew_cask:
@@ -52,3 +55,6 @@
 
 - include: exercism.yml
 
+- name: Install challenges-cli
+  pip:
+    name: challenge-cli
