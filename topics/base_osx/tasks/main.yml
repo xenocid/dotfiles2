@@ -39,7 +39,7 @@
     - rescuetime
 
 - name: Remap Caps Lock to Control
-  command: osascript roles/base_osx/files/remap_capslock_to_ctrl.scpt
+  command: osascript ~/.ansible.d/roles/base_osx/files/remap_capslock_to_ctrl.scpt
 
 #- include: move_downloads.yml
   #tags:
