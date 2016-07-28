@@ -55,6 +55,11 @@
 
 - include: exercism.yml
 
-- name: Install challenges-cli
+- name: Install Python-based tools
   pip:
-    name: challenge-cli
+    name: "{{ item }}" 
+    state: present
+  with_items:
+    - challenge-cli
+    - ssh2ec2
+

@@ -17,4 +17,4 @@
     name: "{{item}}"
     state: present
   with_items:
-    - intellij-idea-ce
+    - intellij-idea

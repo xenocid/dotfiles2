@@ -6,40 +6,47 @@
     upgrade_all: yes
     state: latest
   with_items:
-    - qt
     - ffmpeg
+    - qt
     - youtube-dl
 
-- name: Install base OS X apps
+- name: Install base macOS apps via homebrew
   homebrew_cask:
     name: "{{item}}"
     state: present
   with_items:
-    - bettertouchtool
-    - skype
-    - transmit
-    - flux
-    - textexpander
-    - skitch
+    - 1password
     - alfred
-    - launchrocket
-    - controlplane
+    - bettertouchtool
     - calibre
-    - omnifocus
+    - controlplane
     - crashplan
-    - keyboard-maestro
-    - mactex
-    - utorrent
+    - flux
     - hazel
+    - keyboard-maestro
+    - launchrocket
+    - mactex
+    - omnifocus
+    - omnipresence
+    - path-finder
     - qlcolorcode
     - qlmarkdown
     - quicklook-json
-    - omnipresence
-    - path-finder
     - rescuetime
+    - skitch
+    - skype
+    - transmit
+    - utorrent
+
+- name: Install base macOS apps via pip
+  pip:
+    name: "{{item}}"
+    state: present
+  with_items:
+    - pockyt
 
 - name: Remap Caps Lock to Control
-  command: osascript roles/base_osx/files/remap_capslock_to_ctrl.scpt
+  command: osascript topics/base_osx/files/remap_capslock_to_ctrl.scpt
 
 #- include: move_downloads.yml
   #tags:
