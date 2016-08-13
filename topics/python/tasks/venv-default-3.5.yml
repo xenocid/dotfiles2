@@ -1,0 +1,11 @@
+---
+
+- name: Create default-3.5 virtual environment
+  pip:
+    name: "{{ item }}"
+    virtualenv: ~/.venv/default-3.5
+    virtualenv_python: python3.5
+  with_items:
+    - requests
+    - jinja2
+    - fabric

@@ -1,0 +1,12 @@
+---
+
+- name: Create default-2.7 virtual environment
+  pip:
+    name: "{{ item }}"
+    virtualenv: ~/.venv/default-2.7
+    virtualenv_python: python2.7
+  with_items:
+    - nose
+    - requests
+    - jinja2
+    - fabric

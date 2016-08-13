@@ -1,0 +1,17 @@
+---
+
+- name: Create datascience virtual environment
+  pip:
+    name: "{{ item }}"
+    virtualenv: ~/.venv/datascience
+    virtualenv_python: python3.5
+  with_items:
+    - pygments
+    - pyzmq
+    - test
+    - numpy
+    - scipy
+    - matplotlib
+    - scikit-learn
+    - pandas
+    - jupyter

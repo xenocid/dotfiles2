@@ -30,5 +30,4 @@
   with_items:
     - weka
     - rstudio
-
-- include: ipython-stack-install.yml
+    - pineapple

@@ -13,5 +13,48 @@
 - name: Install global Python packages
   pip:
     name: "{{ item }}"
+    executable: /usr/local/bin/pip
   with_items:
     - virtualenv
+    - virtualenvwrapper
+
+- name: Create .virtualenv directory
+  file: >
+    src=~/Dropbox/Config/virtualenv/
+    dest=~/.venv
+    state=link
+
+- name: Ensure that .zsh exists
+  file: dest=~/.zsh/python state=directory
+
+- name: Copy virtualenvwrapper config file to ZSH
+  copy: >
+    src=virtualenvwrapper.zsh
+    dest=~/.zsh/python/virtualenvwrapper.zsh
+    mode=700
+
+
+- name: Install IPython pre-requisites
+  homebrew: 
+    name: "{{item}}"
+    update_homebrew: yes
+    upgrade_all: yes
+    state: latest
+  with_items:
+    - pyqt
+    - zeromq
+    - freetype
+    - autoenv
+
+- include: venv-default-2.7.yml
+- include: venv-default-3.5.yml
+- include: venv-datascience.yml
+
+- name: Install Python-based tools
+  pip:
+    name: "{{ item }}" 
+    state: present
+    virtualenv: ~/.venv/default-2.7
+  with_items:
+    - challenge-cli
+    - ssh2ec2

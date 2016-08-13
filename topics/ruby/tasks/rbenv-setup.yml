@@ -1,17 +1,16 @@
 ---
 
 - name: Install rbenv
-  sudo_user: "{{ ruby_deploy_user }}"
-  sudo: yes
+  become_user: "{{ ruby_deploy_user }}"
+  become: yes
   git: >
     repo=https://github.com/sstephenson/rbenv.git 
     dest=~{{ ruby_deploy_user }}/.rbenv 
     accept_hostkey=true
 
 - name: Ensure that .zsh exists
-  sudo_user: "{{ ruby_deploy_user }}"
-  sudo: yes
-  file: dest=~{{ ruby_deploy_user }}/.zsh/ state=directory
+  become_user: "{{ ruby_deploy_user }}"
+  become: yes
   file: dest=~{{ ruby_deploy_user }}/.zsh/ruby state=directory
 
 - name: Copy rbenv initialization file there
@@ -29,8 +28,8 @@
     state=directory
 
 - name: Installs ruby-build
-  sudo_user: "{{ ruby_deploy_user }}"
-  sudo: yes
+  become_user: "{{ ruby_deploy_user }}"
+  become: yes
   git: >
     repo=git://github.com/sstephenson/ruby-build.git 
     dest=~{{ ruby_deploy_user }}/.rbenv/plugins/ruby-build 
@@ -43,12 +42,12 @@
     version={{ item.version }}
     accept_hostkey=true
   with_items: rbenv_plugins
-  sudo: true
+  become: true
   ignore_errors: true
 
 - name: Copy default_gems
   copy: >
     src=default-gems
     dest=~{{ ruby_deploy_user }}/.rbenv/default-gems
-  sudo: true
+  become: true
   ignore_errors: true

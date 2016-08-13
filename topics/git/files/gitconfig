@@ -7,10 +7,14 @@ editor = vim
 excludesfile = ~/.gitignore
 
 [push]
-default = matching
+default = simple
 
 [color]
 ui = auto
+diff = true
+
+[merge]
+summary = true
 
 [gitflow "prefix"]
 feature = feature-
@@ -18,3 +22,7 @@ release = release-
 hotfix = hotfix-
 support = support-
 versiontag = v
+
+[rerere]
+enabled = 1
+autoupdate = true

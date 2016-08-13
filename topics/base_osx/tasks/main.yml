@@ -29,6 +29,7 @@
     - omnifocus
     - omnipresence
     - path-finder
+    - pomello
     - qlcolorcode
     - qlmarkdown
     - quicklook-json
@@ -48,7 +49,4 @@
 - name: Remap Caps Lock to Control
   command: osascript ~/.ansible.d/roles/base_osx/files/remap_capslock_to_ctrl.scpt
 
-#- include: move_downloads.yml
-  #tags:
-    #- debug
-
+- include: osx_defaults.yml

@@ -2,6 +2,18 @@
 - name: Create .bin folder
   file: path="~/.bin" state="directory"
 
+- name: Install ImageMagick
+  homebrew:
+    name: imagemagick
+    install_options: --with-fftw --with-librsvg --with-x11 
+    state: latest
+
+- name: Install GraphViz
+  homebrew:
+    name: graphviz
+    install_options: --with-librsvg --with-x11
+    state: latest
+
 - name: Install base development packages
   homebrew: 
     name: "{{item}}"
@@ -9,8 +21,11 @@
     upgrade_all: yes
     state: latest
   with_items:
+    - libtiff
+    - libjpeg
+    - webp
+    - cairo
     - coreutils
-    - imagemagick  
     - wget
     - selecta
     - ctags
@@ -31,6 +46,8 @@
     - docker-machine
     - htop-osx
     - mobile-shell
+    - zmq
+    - zeromq
 
 - name: Install base development applications
   homebrew_cask:
@@ -41,7 +58,6 @@
     - iterm2
     - vagrant
     - dash
-    - lighttable
     - coderunner
 
 - name: Copy ack configuration file
@@ -55,11 +71,4 @@
 
 - include: exercism.yml
 
-- name: Install Python-based tools
-  pip:
-    name: "{{ item }}" 
-    state: present
-  with_items:
-    - challenge-cli
-    - ssh2ec2
 

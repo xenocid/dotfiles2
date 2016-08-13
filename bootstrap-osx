@@ -43,7 +43,7 @@ fi
 # Download and install Ansible
 if [[ ! -x /usr/local/bin/ansible ]]; then
 	info "Installing Ansible"
-	brew install ansible
+  pip install ansible
 fi
 
 if [ ! "$SHELL" == "/usr/local/bin/zsh" ]; then

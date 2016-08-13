@@ -40,3 +40,9 @@ do
 done
 
 unset config_files
+
+source $(brew --prefix)/share/antigen.zsh
+
+antigen bundle MichaelAquilina/zsh-autoswitch-virtualenv
+
+antigen apply
