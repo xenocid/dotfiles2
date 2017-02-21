@@ -21,7 +21,6 @@
     - calibre
     - controlplane
     - crashplan
-    - flux
     - hazel
     - keyboard-maestro
     - launchrocket
@@ -29,15 +28,11 @@
     - omnifocus
     - omnipresence
     - path-finder
-    - pomello
     - qlcolorcode
     - qlmarkdown
     - quicklook-json
     - rescuetime
-    - skitch
-    - skype
     - transmit
-    - utorrent
 
 - name: Install base macOS apps via pip
   pip:
